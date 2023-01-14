@@ -27,12 +27,12 @@ class GetStockData(APIView):
 
         data = pd.read_csv(stock.stock_data)
         for index, row in data.iterrows():
-            # convert timestamp to date format
-            data.at[index, 'time'] = date.fromtimestamp(row['time'])
+            # convert date string to date object
+            data.at[index, 'date'] = datetime.strptime(row['date'], "%Y-%m-%d").date()
 
-        data = data[(data['time'] >= start_date) & (data['time'] <= end_date)]
+        data = data[(data['date'] >= start_date) & (data['date'] <= end_date)]
 
-        indicators = ['time', 'open', 'close', 'high', 'low']
+        indicators = ['date', 'open', 'close', 'high', 'low']
         for indicator in indicator_args:
             indicators.append(indicator)
         data = data[indicators]
