@@ -38,3 +38,10 @@ class GetStockData(APIView):
         data = data[indicators]
 
         return Response(data, status=status.HTTP_200_OK)
+
+class AllStocks(APIView):
+    def get(self, request, format=None):
+        stocks = [stock.ticker for stock in Stock.objects.all()]
+        stocks = ', '.join(stocks)
+
+        return Response(stocks, status=status.HTTP_200_OK)
