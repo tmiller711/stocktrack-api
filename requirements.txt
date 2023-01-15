@@ -1,2 +1,8 @@
 django
+<<<<<<< HEAD
 djangorestframework
+=======
+djangorestframework
+djangorestframework-simplejwt
+pandas
+>>>>>>> 68bccf09 (renames structure)
