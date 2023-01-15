@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 #!/bin/sh
 '''exec' "/home/tristin/Documents/Coding/Python/StockTrack API/venv/bin/python3.8" "$0" "$@"
 ' '''
+=======
+#!/home/tristin/Documents/Coding/Python/stocktrackapp/venv/bin/python
+>>>>>>> 68bccf09 (renames structure)
 # -*- coding: utf-8 -*-
 import re
 import sys
