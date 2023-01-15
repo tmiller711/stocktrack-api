@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 """api URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -26,4 +27,12 @@ urlpatterns = [
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('api/', include('main.urls')),
     path('account/', include('accounts.urls')),
+=======
+from django.urls import path
+from .views import GetStockData, AllStocks
+
+urlpatterns = [
+    path('stocks/', AllStocks.as_view()),
+    path('<str:tikr>/', GetStockData.as_view()),
+>>>>>>> 68bccf09 (renames structure)
 ]
